@@ -11,7 +11,7 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 		this.weatherData = weatherData;
 		weatherData.registerObserver(this);
 	}
-
+	@Override
 	public void update(float temp, float humidity, float pressure) {
 		tempSum += temp;
 		numReadings++;
@@ -26,7 +26,7 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 
 		display();
 	}
-
+	@Override
 	public void display() {
 		System.out.println("Avg/Max/Min temperature = " + (tempSum / numReadings)
 			+ "/" + maxTemp + "/" + minTemp);
