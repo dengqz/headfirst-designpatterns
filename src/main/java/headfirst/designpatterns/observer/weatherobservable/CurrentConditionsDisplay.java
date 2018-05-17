@@ -12,7 +12,7 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 		this.observable = observable;
 		observable.addObserver(this);
 	}
-	
+	@Override
 	public void update(Observable obs, Object arg) {
 		if (obs instanceof WeatherData) {
 			WeatherData weatherData = (WeatherData)obs;
@@ -21,7 +21,7 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 			display();
 		}
 	}
-	
+	@Override
 	public void display() {
 		System.out.println("Current conditions: " + temperature 
 			+ "F degrees and " + humidity + "% humidity");
